@@ -20,3 +20,5 @@ rollCount = int(sys.argv[2])
 
 if (diceType in [2, 4, 6, 8, 10, 20, 100]):
     dice_roll(diceType, rollCount)
+else:
+    print("Invalid dice type: " + sys.argv[1])
