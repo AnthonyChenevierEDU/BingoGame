@@ -11,10 +11,10 @@ diceType = int(sys.argv[1][1:])
 rollCount = int(sys.argv[2])
 
 # check if diceType is not allowed, and if not then print an error message.
-if (diceType not in [2, 4, 6, 8, 10, 20, 100]):
+if diceType not in [2, 4, 6, 8, 10, 20, 100]:
     print("Invalid dice type: " + sys.argv[1] +
           "\nMust be one of D2, D4, D6, D8, D10, D20 or D100")
 else:  # roll rollCount number of dice
     print("Rolling a D" + str(diceType) + " " + str(rollCount) + " times: ")
     for i in range(rollCount):
-        print("Dice " + str(i + 1) + ": " + str(dice_roll(diceType)))
+        print("Dice " + str(i + 1) + ": " + dice_roll(diceType))
