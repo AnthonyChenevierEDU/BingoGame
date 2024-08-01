@@ -7,8 +7,8 @@ import sys  # import the system library
 from dice import dice_roll
 
 # store both arguments in variables as integers
-diceType = int(sys.argv[1][1:])
-rollCount = int(sys.argv[2])
+diceType = int(sys.argv[1])
+rollCount = int(sys.argv[2][1:])
 
 # check if diceType is not allowed, and if not then print an error message.
 if diceType not in [2, 4, 6, 8, 10, 20, 100]:

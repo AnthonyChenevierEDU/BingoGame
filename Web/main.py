@@ -1,29 +1,35 @@
 import random  # import the random library module
-from pyweb import pydom
+from pyscript import document
 
 
 # Function: dice_roll
 # Params: int(faces)
 # Returns: string with result of dice roll
 def dice_roll(faces):
-    face_range = range(1, faces)
+    face_range = range(1, faces+1)
     face_value = random.choice(face_range)
     return "Rolled a " + str(face_value)
 
+
 selected_faces = "Coin"
-def change_handler(event = None):
+
+
+def change_handler(event=None):
     global selected_faces
     if event:
         selected_faces = event.target.value
-        print("BA" . selected_faces)
+        print("Changed faces to " + selected_faces)
+
 
 def roll(event):
-    dc = pydom["input#dice-count"][0].value
-    print(dc)
-    print(selected_faces)
-    for _ in range(dc):
-        if faces == "Coin":
-            faces = "D2"
+    global selected_faces
+    dc = int(document.querySelector("input#dice-count").value)
+    rolls = ""
+    for i in range(dc):
+        if selected_faces == "Coin":
+            selected_faces = "D2"
+        faces = int(selected_faces[1:])
+        rolls += "Roll " + str(i+1) + ": " + dice_roll(faces) + "<br/>"
 
-    current_roll = dice_roll(int(faces[1:]))
-    pydom["p#output"].content = current_roll
+    output = document.querySelector("p#output")
+    output.innerHTML = rolls
