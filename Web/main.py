@@ -1,35 +1,43 @@
 import random  # import the random library module
 from pyscript import document
+import dice
 
 
-# Function: dice_roll
-# Params: int(faces)
-# Returns: string with result of dice roll
-def dice_roll(faces):
-    face_range = range(1, faces+1)
-    face_value = random.choice(face_range)
-    return "Rolled a " + str(face_value)
+# GLOBAL (program-wide) variable
+# this list holds the selections and
+# counts made for each dice type
+# each entry in the list is a tuple
+# containing number of dice to roll for that type
+# key = dice type
+# val - dice count
+# i.e. dice_selection[0] = ( "D6", 20 )
+dice_selection = []
+
+def add_dice(type_count):
+    elem = document.querySelector("div#dice-" + type_count)
+    elem.
 
 
-selected_faces = "Coin"
-
-
-def change_handler(event=None):
-    global selected_faces
+def select_option(event=None):
     if event:
-        selected_faces = event.target.value
-        print("Changed faces to " + selected_faces)
+        t_id = event.target.id
+        print(t_id)
+
+        #selected_faces[t_id] = event.target.value
+        #print("Changed faces to " + selected_faces[t_id])
 
 
 def roll(event):
     global selected_faces
-    dc = int(document.querySelector("input#dice-count").value)
-    rolls = ""
+    dc = int(document.querySelector("input#dice-count-" + selected_faces).value)
+    rolls = []
+    faces = 0
     for i in range(dc):
         if selected_faces == "Coin":
-            selected_faces = "D2"
-        faces = int(selected_faces[1:])
-        rolls += "Roll " + str(i+1) + ": " + dice_roll(faces) + "<br/>"
+            faces = 2
+        else:
+            faces = selected_faces[1:]
+        rolls.append("(D" + faces + ") Roll " + str(i+1) + ": " + dice.dice_roll(faces) + "<br/>")
 
     output = document.querySelector("p#output")
     output.innerHTML = rolls

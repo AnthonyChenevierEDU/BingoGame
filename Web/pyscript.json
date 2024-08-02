@@ -1,3 +1,6 @@
 {
-  "name": "DiceRollerWeb"
+  "name": "DiceRollerWeb",
+  "files": {
+    "./dice.py": "dice.py"
+  }
 }

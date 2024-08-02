@@ -5,7 +5,7 @@ Usage: DiceRoller1.py
 import random  # import the random module
 
 # set the range of values
-diceRange = range(1, 6)
+diceRange = range(1, 7)
 print(diceRange)
 faceValue = random.choice(diceRange)
 

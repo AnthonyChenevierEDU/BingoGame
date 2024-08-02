@@ -1,4 +1,4 @@
-import random  # import the random library module
+import random
 
 
 # Function: dice_roll
