@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+p {
+    margin-top: 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input, button {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#loading {
+    text-align: center;
+    padding: 20px;
+}
+#controls, #output {
+    width: 60%;
+    border: 1px solid #c0c0c0;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#roll-history {
+    text-align: left;
+    height: 450px; /* Set the maximum height of the roll-history */
+    overflow-y: auto; /* Add a vertical scrollbar to the roll-history */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}

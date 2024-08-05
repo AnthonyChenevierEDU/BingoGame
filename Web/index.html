@@ -7,11 +7,12 @@
 
         <!-- PyScript CSS -->
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+        <link rel="stylesheet" href="./style.css">
 
         <!-- This script tag bootstraps PyScript -->
         <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
-        <!-- loading screen JavaScript -->
+        <!-- loading screen JavaScript closes the loading dialog when python is ready -->
         <script type="module">
             const loading = document.getElementById("loading")
             addEventListener("py:ready", () => loading.close())
@@ -24,13 +25,11 @@
     </head>
 
     <body>
-        <dialog id="loading">
-            <h1>Loading python environment...</h1>
-        </dialog>
+        <dialog id="loading"><h1>Loading python environment...</h1></dialog>
 
-
-        <!-- Put your content here -->
-        <h1>Dice Roller</h1>
+        <section id="controls">
+            <!-- Put your content here -->
+            <h1>Dice Roller</h1>
             <label for="face-count">Dice Type</label>
             <select py-change="select_face_option" id="face-count">
                 <option value="Coin">Coin</option>
@@ -48,11 +47,11 @@
 
             <button type="submit" id="btn-load" class="py-button" py-click="roll_all_dice">Roll dice</button>
             <button type="submit" id="btn-clear" class="py-button" py-click="clear_history">Clear all rolls</button>
-
-        <h2>Roll History</h2>
-        <div id="roll-history"></div>
-
-
+        </section>
+        <section id="output">
+            <h2>Roll History</h2>
+            <div id="roll-history"></div>
+        </section>
         <!-- End of your code -->
         <script type="py" src="main.py" config="./pyscript.json"></script>
     </body>

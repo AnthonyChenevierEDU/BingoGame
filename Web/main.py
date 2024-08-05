@@ -24,12 +24,14 @@ def roll_all_dice(event):
         faces = int(dice_type[1:])
 
     dice_count = int(document.querySelector("input#dice-count").value)
-    for roll in range(dice_count):
-        result = ("<p>(D{0}) Roll {1}/{2}: {3}</p>"
-                  .format(str(faces), str(roll + 1), dice_count, dice.dice_roll(faces)))
-        document.querySelector("div#roll-history").innerHTML += result
+    roll_history_div = document.querySelector("div#roll-history")
 
-    document.querySelector("div#roll-history").innerHTML += "<br />"
+    for dice_num in range(1, dice_count + 1):
+        current_roll = dice.dice_roll(faces)
+        roll_history_div.innerHTML += f"<p>(D{faces}) Roll {dice_num}/{dice_count}: {current_roll}</p>"
+
+    roll_history_div.innerHTML += "<br />"
+    roll_history_div.scrollTop = roll_history_div.scrollHeight
 
 
 def clear_history(event):
