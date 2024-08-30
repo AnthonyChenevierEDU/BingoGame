@@ -1,38 +1,52 @@
+import random
 from pyscript import document
-import dice
+import card_matrix
+
+caller_numbers = []
+card_numbers = []
 
 
-# GLOBAL (script-wide) variable
-# this stores the selected face option from the drop-down list
-dice_type = "Coin"
+def shuffle_caller():
+    global caller_numbers
+    print("Calling 'shuffle_caller'")
+    caller_numbers = list(range(1,76))
+    random.shuffle(caller_numbers)
+    for i in range(75):
+        document.querySelector(f"#cell_{i+1}").style.fontWeight = 'normal'
 
 
-def select_face_option(event):
-    global dice_type  # use global var named dice_type
+def generate_card():
+    print("Calling 'generate_card'")
+    global card_numbers
+    card_numbers = list(range(1,76))
+    random.shuffle(card_numbers)
+    card_numbers = card_numbers[:25]
 
-    dice_type = event.target.value
-    # print a debugging statement to the console
-    print("Changed dice_type to " + dice_type)
-
-
-def roll_all_dice(event):
-    global dice_type  # use global var named dice_type
-    # extract the number of faces to use for the dice_roll function
-    if dice_type == "Coin":
-        faces = 2
-    else:
-        faces = int(dice_type[1:])
-
-    dice_count = int(document.querySelector("input#dice-count").value)
-    roll_history_div = document.querySelector("div#roll-history")
-
-    for dice_num in range(1, dice_count + 1):
-        current_roll = dice.dice_roll(faces)
-        roll_history_div.innerHTML += f"<p>(D{faces}) Roll {dice_num}/{dice_count}: {current_roll}</p>"
-
-    roll_history_div.innerHTML += "<br />"
-    roll_history_div.scrollTop = roll_history_div.scrollHeight
+    for x in range(5):
+        for y in range(5):
+            bid = f"#bcell_{x+1}_{y+1}"
+            document.querySelector(bid).innerHTML = card_numbers.pop()
 
 
-def clear_history(event):
-    document.querySelector("div#roll-history").innerHTML = ""
+def call_next(event):
+    global caller_numbers
+    print("calling 'call_next'")
+    if len(caller_numbers) > 0:
+        next_num = caller_numbers.pop()
+        document.querySelector(f"#cell_{next_num}").style.fontWeight = 'bold'
+
+
+def reset_game(event):
+    print("calling 'reset_game'")
+    shuffle_caller()
+    generate_card()
+
+
+def check_cell(event):
+    print("calling 'check_cell'")
+    cell_id = event.target.id
+    print(cell_id)
+
+
+#initial setup
+reset_game(0)

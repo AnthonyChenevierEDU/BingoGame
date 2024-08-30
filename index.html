@@ -125,51 +125,52 @@
         <section id="card_section">
             <!-- Put your bingo card html here -->
             <table border="1">
-        <thead>
-            <tr>
-                <th colspan="5">Bingo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+                <thead>
+                    <tr>
+                        <th colspan="5">Bingo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="bcell_1_1" py-click="check_cell"></td>
+                        <td id="bcell_1_2" py-click="check_cell"></td>
+                        <td id="bcell_1_3" py-click="check_cell"></td>
+                        <td id="bcell_1_4" py-click="check_cell"></td>
+                        <td id="bcell_1_5" py-click="check_cell"></td>
+                    </tr>
+                    <tr>
+                        <td id="bcell_2_1" py-click="check_cell"></td>
+                        <td id="bcell_2_2" py-click="check_cell"></td>
+                        <td id="bcell_2_3" py-click="check_cell"></td>
+                        <td id="bcell_2_4" py-click="check_cell"></td>
+                        <td id="bcell_2_5" py-click="check_cell"></td>
+                    </tr>
+                    <tr>
+                        <td id="bcell_3_1" py-click="check_cell"></td>
+                        <td id="bcell_3_2" py-click="check_cell"></td>
+                        <td id="bcell_3_3" py-click="check_cell"></td>
+                        <td id="bcell_3_4" py-click="check_cell"></td>
+                        <td id="bcell_3_5" py-click="check_cell"></td>
+                    </tr>
+                    <tr>
+                        <td id="bcell_4_1" py-click="check_cell"></td>
+                        <td id="bcell_4_2" py-click="check_cell"></td>
+                        <td id="bcell_4_3" py-click="check_cell"></td>
+                        <td id="bcell_4_4" py-click="check_cell"></td>
+                        <td id="bcell_4_5" py-click="check_cell"></td>
+                    </tr>
+                    <tr>
+                        <td id="bcell_5_1" py-click="check_cell"></td>
+                        <td id="bcell_5_2" py-click="check_cell"></td>
+                        <td id="bcell_5_3" py-click="check_cell"></td>
+                        <td id="bcell_5_4" py-click="check_cell"></td>
+                        <td id="bcell_5_5" py-click="check_cell"></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
-        <button id="reset_game" py-click="reset">Reset Game</button>
+        <button id="reset_game" py-click="reset_game">Reset Game</button>
+
         <script type="py" src="main.py" config="./pyscript.json"></script>
     </body>
 </html>
