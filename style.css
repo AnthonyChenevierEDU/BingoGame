@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    background-color: antiquewhite;
+}
+
+table {
+    display: inline-table;
+}
+
+#all-numbers {
+    background-color: grey;
+    font-size: xx-large;
+    margin-bottom: 1vh;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    border-spacing: 1vh;
+}
+
+#all-numbers td {
+    background-color: white;
+    padding: .5vh;
+}
+
+#all-numbers td.col-head {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+#bingo-card {
+    font-size: xxx-large;
+    background-color: grey;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    border-spacing: 2vh;
+}
+
+#bingo-card td {
+    border: 1px solid #808080;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.highlight-card {
+    color: red;
+    font-weight: bold;
+}
+
+.highlight-caller {
+    color: blue;
+    font-weight: bold;
+}
+
+section#caller {
+    float: left;
+    width: 49%;
+}
+
+#current_call {
+    float: left;
+    font-size: xxx-large;
+    width: 3vh;
+}
+
+#called_numbers {
+}
+
+section#bingo-card {
+    float: right;
+    width: 49%;
+}
