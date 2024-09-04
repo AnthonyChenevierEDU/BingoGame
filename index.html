@@ -21,7 +21,7 @@
 
 
         <!-- webpage title (shows in browser tab) -->
-        <title>Pyscript Web Dice Roller</title>
+        <title>Pyscript Web Bingo Game</title>
     </head>
 
     <body>
@@ -32,13 +32,12 @@
         </dialog>
 
         <section id="header">
-            <h1>Dice Roller</h1>
+            <h1>BINGO!</h1>
             <button id="reset_game" py-click="reset_game">Reset Game</button>
         </section>
 
         <section id="caller">
             <h2>Caller</h2>
-            <!-- Put your caller html code here -->
             <table id="all-numbers">
                 <tbody>
                     <tr>
@@ -134,14 +133,18 @@
                 </tbody>
             </table>
             <div>
-                <div id="current_call"></div>
-                <div id="called_numbers"></div>
+                <div id="current-container">
+                    <p id="current_call"></p>
+                    <button id="call_number" py-click="call_next">Call next</button>
+                </div>
+                <div id="history-container">
+                    <h3>Call History</h3>
+                    <p id="called_numbers"></p>
+                </div>
             </div>
-            <button id="call_number" py-click="call_next">Call next number</button>
-
         </section>
-        <section id="card_section">
-            <!-- Put your bingo card html here -->
+
+        <section id="card">
             <table id="bingo-card">
                 <thead>
                     <tr>

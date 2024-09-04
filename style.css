@@ -1,46 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     text-align: center;
     font-family: 'Lucida Grande', Arial, sans-serif;
-    background-color: antiquewhite;
+    background-color: #a2e9fd;
+    background-image: url('b3h.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 2em;
 }
 
 table {
     display: inline-table;
 }
 
-#all-numbers {
-    background-color: grey;
-    font-size: xx-large;
-    margin-bottom: 1vh;
-    border: 1px solid #808080;
+section#header {
+    width: 100%;
+    margin-bottom: 2vh;
+}
+button {
+    background-color: #4b4d7a;
+    border: 2px solid #2f304c;
+    height: 3lh;
+    font-size: large;
     border-radius: 10px;
-    border-spacing: 1vh;
+    color: white;
+}
+section#caller {
+    display: table-cell;
 }
 
-#all-numbers td {
-    background-color: white;
+
+table#all-numbers {
+    background-color: #4b4d7a;
+    border: 2px solid #2f304c;
+    font-size: medium;
+    margin-bottom: 1vh;
+    border-radius: 10px;
+    border-spacing: .5vh;
+}
+
+table#all-numbers td {
+    background-color: #8d91e3;
     padding: .5vh;
+    border-radius: 3px;
 }
 
-#all-numbers td.col-head {
+table#all-numbers td.col-head {
     background-color: transparent;
     border: none;
     color: white;
     font-weight: bold;
 }
 
-#bingo-card {
+div:has(#history-container) {
+    display: flex;
+}
+#history-container {
+    width: 320px;
+    height: 174px;
+}
+#history-container h3 {
+    margin: 0;
+}
+#called_numbers {
+    padding: 1vh;
+    margin: 0;
+}
+
+#current-container {
+    flex-grow: 1;
+}
+#current_call {
     font-size: xxx-large;
-    background-color: grey;
-    border: 1px solid #808080;
+}
+#current-container button {
+    width: 100%;
+}
+
+section#card {
+    display: table-cell;
+    width: 100%;
+}
+
+table#bingo-card {
+    border: 2px solid #643304;
+    background-color: #e1793b;
+    font-size: xxx-large;
+    opacity: 85%;
     border-radius: 10px;
     border-spacing: 2vh;
 }
 
-#bingo-card td {
-    border: 1px solid #808080;
+table#bingo-card td {
+    border: 2px solid #633203;
+    background-color: #fcf7d6;
     border-radius: 10px;
-    background-color: white;
     padding: 1vh;
     cursor: pointer;
 }
@@ -53,23 +113,4 @@ table {
 .highlight-caller {
     color: blue;
     font-weight: bold;
-}
-
-section#caller {
-    float: left;
-    width: 49%;
-}
-
-#current_call {
-    float: left;
-    font-size: xxx-large;
-    width: 3vh;
-}
-
-#called_numbers {
-}
-
-section#bingo-card {
-    float: right;
-    width: 49%;
 }

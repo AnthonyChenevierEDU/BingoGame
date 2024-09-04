@@ -45,8 +45,8 @@ def reset_calls():
     global called_numbers
     # reset the called numbers
     called_numbers = []
-    document.querySelector("#called_numbers").innerHTML = ""
-    document.querySelector("#current_call").innerHTML = ""
+    document.querySelector("#called_numbers").innerHTML = "none"
+    document.querySelector("#current_call").innerHTML = "-"
     
     for i in range(75):
         reset_caller_cell(f"#cell_{i+1}")
@@ -86,7 +86,6 @@ def call_next(event):
         highlight_caller_cell(f"#cell_{current_call}")
 
 
-
 def check_cell(event):
     print("calling 'check_cell'")
     cell_id = event.target.id
@@ -95,9 +94,9 @@ def check_cell(event):
     coords = cell_id.split("_")[1:]
     x = int(coords[0])
     y = int(coords[1])
-    if cell_val in called_numbers and card_matrix.get_position(x, y) == 0:
+    if cell_val in called_numbers and not card_matrix.is_position_marked(x, y):
         highlight_card_cell(f"#{cell_id}")
-        if card_matrix.set_position(x, y):
+        if card_matrix.mark_position(x, y):
             document.querySelector("#win_game").showModal()
 
 
